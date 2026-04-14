@@ -1,0 +1,12 @@
+section .data
+    tema dq 0               ; Reserva 8 bytes (64-bit) para um endereço
+    str_escuro db "escuro", 0
+    str_claro  db "claro", 0
+
+section .text
+    global _start
+
+_start:
+    ; Atribuindo o endereço da string "escuro" à variável 'tema'
+    mov rax, str_escuro     ; Carrega o endereço da string no registrador RAX
+    mov [tema], rax         ; Move o endereço para o espaço de memória de 'tema'
